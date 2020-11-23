@@ -14,7 +14,12 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         todos: [...state.todos, action.payload],
       };
-
+      case "DEL_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((todo,index) => index !== action.payload)
+        // todos: [...state.todos.slice(0, action.payload), ...state.todos.slice(action.payload+1, state.todos.length)]
+      }
     default:
       return state;
   }

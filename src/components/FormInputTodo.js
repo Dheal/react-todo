@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, connect } from "react-redux";
+import Button from 'react-bootstrap/Button';
 
 const FormInputTodo = (props) => {
   //   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const FormInputTodo = (props) => {
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />
-        <input type="submit" value="save todo" />
+        <Button type="submit" variant="primary" style={{margin: "10px"}}>Kirim</Button>
       </form>
     </div>
   );
